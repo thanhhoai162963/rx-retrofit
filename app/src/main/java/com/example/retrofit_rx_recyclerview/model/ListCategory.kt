@@ -14,5 +14,5 @@ class ListCategory {
 
     @SerialName("list")
     @Expose
-    val list: List<ListCategorySub>? = null
+    val list: List<CategorySub>? = null
 }

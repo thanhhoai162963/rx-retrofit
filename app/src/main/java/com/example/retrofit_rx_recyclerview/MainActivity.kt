@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.retrofit_rx_recyclerview.adapter.MedicineAdapter
 import com.example.retrofit_rx_recyclerview.model.Base
-import com.example.retrofit_rx_recyclerview.model.ListCategorySub
+import com.example.retrofit_rx_recyclerview.model.CategorySub
 
 import com.example.retrofit_rx_recyclerview.retrofit.ServiceBuilder
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -52,9 +52,10 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun recyclerviewBuilder(listCategorySub:  List<ListCategorySub>?){
+    fun recyclerviewBuilder(listCategorySub:  List<CategorySub>?){
         listCategorySub?.let {
-            val medicineAdapter = MedicineAdapter(it)
+            val medicineAdapter = MedicineAdapter()
+            medicineAdapter.setData(it)
             recyclerview.apply {
                 setItemViewCacheSize(20)
                 addItemDecoration(DividerItemDecoration(this@MainActivity,DividerItemDecoration.VERTICAL))

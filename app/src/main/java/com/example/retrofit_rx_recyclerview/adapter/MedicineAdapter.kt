@@ -5,12 +5,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofit_rx_recyclerview.R
-import com.example.retrofit_rx_recyclerview.model.ListCategorySub
+import com.example.retrofit_rx_recyclerview.model.CategorySub
 import kotlinx.android.synthetic.main.item_medicine.view.*
 
-class MedicineAdapter(val listCategorySub: List<ListCategorySub>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MedicineAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var mDataList  : List<CategorySub>?=null
+
+    fun setData(data : List<CategorySub>){
+        mDataList=data
+    }
+
+
     inner class MedicideViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        fun bind(listCategorySub: ListCategorySub){
+        fun bind(listCategorySub: CategorySub){
             itemView.tV_info.text = listCategorySub.title
 
         }
@@ -22,12 +29,12 @@ class MedicineAdapter(val listCategorySub: List<ListCategorySub>) : RecyclerView
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is MedicideViewHolder){
-            holder.bind(listCategorySub[position])
+            mDataList?.get(position)?.let { holder.bind(it) }
         }
     }
 
     override fun getItemCount(): Int {
-        return listCategorySub.size
+        return mDataList?.size!!
     }
 
 
