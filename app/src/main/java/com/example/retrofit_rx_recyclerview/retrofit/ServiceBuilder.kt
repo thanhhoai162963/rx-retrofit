@@ -19,7 +19,7 @@ class ServiceBuilder {
     }
 
     private fun<T> buildService(service: Class<T>) : T{
-        return  retrofit.create(service)
+        return retrofit.create(service)
     }
 
     private fun configService() {

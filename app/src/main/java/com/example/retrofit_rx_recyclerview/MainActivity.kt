@@ -1,5 +1,6 @@
 package com.example.retrofit_rx_recyclerview
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -40,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onNext(t: Base?) {
-                    Log.d("bbb", t?.data?.list?.get(0)?.list?.get(1)?.title.toString())
                     recyclerviewBuilder(t?.data?.list?.get(0)?.list)
                 }
 

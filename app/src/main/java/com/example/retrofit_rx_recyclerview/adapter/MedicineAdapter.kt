@@ -2,6 +2,8 @@ package com.example.retrofit_rx_recyclerview.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +12,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.example.retrofit_rx_recyclerview.Constant
+import com.example.retrofit_rx_recyclerview.DetailActivity
 import com.example.retrofit_rx_recyclerview.R
 import com.example.retrofit_rx_recyclerview.model.list.CategorySub
 import kotlinx.android.synthetic.main.item_medicine.view.*
@@ -27,19 +31,22 @@ class MedicineAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class MedicideViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         @SuppressLint("CheckResult")
         fun bind(listCategorySub: CategorySub){
+
             itemView.tV_info.text = listCategorySub.title
-            itemView.tVDateTime.text = listCategorySub.onDate
-            if(listCategorySub.avatar != null) {
+            itemView.tcDateTime.text = listCategorySub.onDate
                 Glide.with(context)
                     .load(listCategorySub.avatar)
-                    .placeholder(R.drawable.ic_launcher_background)
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .skipMemoryCache(true)
                     .fitCenter()
                     .transform(CenterInside(),RoundedCorners(25))
                     .into(itemView.image1)
-            }else {
-                itemView.image1.setImageResource(R.drawable.ic_launcher_background)
+
+            itemView.setOnClickListener {
+                Log.d("bbb1",listCategorySub.postSignature.toString())
+                val intent = Intent(context,DetailActivity::class.java)
+                intent.putExtra(Constant.POST_SIGNATURE,listCategorySub.postSignature)
+                context.startActivity(intent)
             }
         }
     }
