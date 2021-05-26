@@ -1,9 +1,9 @@
-package com.example.retrofit_rx_recyclerview
+package com.example.retrofit_rx_recyclerview.request
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RequestData(
+data class RequestDataList(
 
     @SerialName("categoryType")
     val categoryType: Int = 0,

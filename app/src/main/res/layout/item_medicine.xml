@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="17dp">
+    android:paddingHorizontal="10dp">
     <ImageView
         android:id="@+id/image1"
         android:src="@mipmap/ic_launcher"
@@ -14,7 +14,8 @@
     <TextView
         android:id="@+id/tV_info"
         android:layout_toEndOf="@id/image1"
-        android:textSize="20sp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <TextView

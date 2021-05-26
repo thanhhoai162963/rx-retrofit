@@ -1,4 +1,4 @@
-package com.example.retrofit_rx_recyclerview.model
+package com.example.retrofit_rx_recyclerview.model.list
 
 import com.google.gson.annotations.Expose
 import kotlinx.serialization.SerialName
@@ -11,5 +11,12 @@ class CategorySub {
     @SerialName("title")
     @Expose
     val title: String? = null
+
+    @SerialName("onDate")
+    @Expose
+    val onDate:String? = null
+
+    @SerialName("avatar")
+    val avatar:String? = null
 
 }

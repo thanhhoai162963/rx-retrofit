@@ -1,4 +1,4 @@
-package com.example.retrofit_rx_recyclerview.model
+package com.example.retrofit_rx_recyclerview.model.list
 
 import com.google.gson.annotations.Expose
 import kotlinx.serialization.SerialName
