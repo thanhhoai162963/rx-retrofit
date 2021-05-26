@@ -1,6 +1,7 @@
 package com.example.retrofit_rx_recyclerview
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Base64
 import android.util.Log
@@ -11,7 +12,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.retrofit_rx_recyclerview.databinding.ActivityDetailBinding
 import com.example.retrofit_rx_recyclerview.model.detail.DataList
 import com.example.retrofit_rx_recyclerview.model.detail.Detail
 import com.example.retrofit_rx_recyclerview.request.RequestDataDetail
@@ -35,10 +35,13 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
         val intent = intent
         val postSignature = intent.getStringExtra(Constant.POST_SIGNATURE)
-        Log.d("bbb1",postSignature.toString())
         val requestDataDetail = postSignature?.let { RequestDataDetail(2, it) }
         if (requestDataDetail != null) {
             callApiDetail(requestDataDetail)
+        }
+        buttonComment.setOnClickListener {
+            val intent1 = Intent(this,CommentsActivity::class.java)
+            startActivity(intent1)
         }
     }
     fun callApiDetail(requestDataDetail: RequestDataDetail) {
@@ -50,7 +53,7 @@ class DetailActivity : AppCompatActivity() {
                 }
 
                 override fun onNext(t: Detail?) {
-                    var uri = t?.data?.msg?.msgContent
+                    val uri = t?.data?.msg?.msgContent
                     if (uri != null) {
                         initWebView(uri)
                     }

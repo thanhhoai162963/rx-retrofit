@@ -16,6 +16,10 @@
             android:name=".DetailActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/Theme.Retrofit_Rx_Recyclerview.NoActionBar">
+        </activity>
+        <activity android:name=".CommentsActivity"
+            android:label="CommentsActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
         </activity>
         <activity android:name=".MainActivity">
