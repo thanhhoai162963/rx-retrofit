@@ -10,5 +10,5 @@ data class DataComments (
     val total:Int? = null,
 
     @SerializedName("list")
-    val listCommnets:ListComments? = null,
+    val listComments:List<ListComments>? = null,
 )

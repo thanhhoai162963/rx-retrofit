@@ -3,7 +3,7 @@ package com.example.retrofit_rx_recyclerview.model.list
 import com.google.gson.annotations.Expose
 import kotlinx.serialization.SerialName
 
-class Base{
+class LoadCategoryWithPost2Response{
     @SerialName("utcTime0")
     @Expose
     val utcTime0: String? = null

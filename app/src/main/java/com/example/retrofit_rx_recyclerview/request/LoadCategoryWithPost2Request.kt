@@ -1,19 +1,25 @@
 package com.example.retrofit_rx_recyclerview.request
+
+import com.google.gson.annotations.Expose
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RequestDataList(
+data class LoadCategoryWithPost2Request(
 
     @SerialName("categoryType")
-    val categoryType: Int = 0,
+    @Expose
+    val categoryType: Int? = null,
 
     @SerialName("language")
-    val language: Int = 0,
+    @Expose
+    val language: Int? = null,
 
     @SerialName("page")
-    val page: Int = 0,
+    @Expose
+    val page: Int? = null,
 
     @SerialName("pageSize")
-    val pageSize: Int = 0
+    @Expose
+    val pageSize: Int? = null
 )

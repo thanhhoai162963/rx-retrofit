@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp">
 
     <ImageView
-        android:id="@+id/img_avatar"
+        android:id="@+id/img_avatar_comment"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
+        android:scaleType="fitXY"
         android:background="@drawable/circle_avatar"
         android:contentDescription="TODO"
         tools:ignore="ContentDescription,HardcodedText" />
@@ -17,25 +20,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/img_avatar"
+        android:layout_toEndOf="@id/img_avatar_comment"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/text_name"
+            android:id="@+id/text_name_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="name"
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/text_time"
+            android:id="@+id/text_time_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="date time"
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/text_info"
+            android:id="@+id/text_info_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="information"

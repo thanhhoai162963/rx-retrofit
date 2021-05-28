@@ -5,12 +5,16 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class RequestDataDetail(
+data class RequestDataComments(
     @SerializedName("language")
     @Expose
     val language: Int? = null,
 
     @SerializedName("postSignature")
     @Expose
-    val postSignature: String? = null
+    val postSignature: String? = null,
+
+    @SerializedName("pageSize")
+    @Expose
+    val pageSize: Int? = null
 )

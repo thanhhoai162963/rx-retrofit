@@ -20,5 +20,5 @@ data class Comments (
 
     @SerialName("data")
     @Expose
-    val data: DataList? = null
+    val data: DataComments? = null
 )
